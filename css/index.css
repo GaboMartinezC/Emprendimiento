@@ -13,9 +13,3 @@
 .clr-font-1{
     color: var(--clr-font-100);
 }
-.home::after{
-    content: '';
-    position: absolute;
-    background-color: #8ba6ad;
-    width: 100px;
-}

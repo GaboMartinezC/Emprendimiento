@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/switchModos.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
-<body>
+<body onload="Inicializacion()">
     <div class="container-fluid m-0 p-0">
         <div class="row">
             <div class="d-flex flex-column p-3 bg-light" style="width: 350px; height: 100vh;">
@@ -90,26 +88,26 @@
                     <div class="col-6 d-flex align-items-center justify-content-center flex-column">
                         <h1 class="font-custom-1 h2">Agrega un producto</h1>
                         <div class="form-floating my-4 w-50 ">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label class="font-custom-1 fs-5 " for="floatingInput">Nombre del producto</label>
-                            <select class="form-select mt-3 font-custom-1" aria-label="Autores">
+                            <input type="text" class="form-control" placeholder="a"  id="nombre">
+                            <label class="font-custom-1 fs-5 " for="nombre">Nombre del producto</label>
+                            <select id="autores" class="form-select mt-3 font-custom-1" aria-label="Autores">
                                 <option class="fs-5" selected> Selecciona un autor</option>
                             </select>
-                            <select class="form-select mt-3 font-custom-1" aria-label="Idiomas">
+                            <select id="idiomas" class="form-select mt-3 font-custom-1" aria-label="Idiomas">
                                 <option class="fs-5" selected> Selecciona un idioma</option>
                             </select>
-                            <div class="form-check form-check-inline py-2">
-                                <div class="d-flex align-items-center justify-content-center visually-hidden">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label mx-2 pt-2 font-custom-1 fs-5" for="inlineCheckbox1">Opcion</label>
-                                </div>
-                            </div>
-                            <button class="btn active border-0 my-3 px-4 py-2 w-100"> <span class="font-custom-1 fs-5">Agregar</span> </button>
+                            <div id="generos" class="form-check form-check-inline py-2 row"></div>
+                            <button id="btnAgregar" class="btn active border-0 my-3 px-4 py-2 w-100 d-flex align-items-center justify-content-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                  </svg>
+                              <span class="font-custom-1 fs-5 mx-2">Agregar</span> </button>
                         </div>
                     </div>
                     <div class="col-6">
                         <h1 class="font-custom-1 h2">Estos son nuestros productos</h1>
-                        <table class="table">
+                        
+                        <table  class="table">
                             <thead>
                               <tr>
                                 <th scope="col" class="fs-5 font-custom-1">#</th>
@@ -119,20 +117,19 @@
                                 <th scope="col" class="fs-5 font-custom-1">Generos</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>nombre</td>
-                                <td>idioma</td>
-                                <td>autor</td>
-                                <td>genero, genero</td>
-                              </tr>
-                            </tbody>
-                          </table>
+                            <tbody id="productos"></tbody>
+                            </table>
+                            <button id="limpiarTabla" class="m-auto btn active border-0 d-flex align-items-center justify-content-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
+                                    <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+                                </svg>
+                                <span class="font-custom-1 p-1">Limpiar Tabla</span> 
+                            </button>
                     </div>
                 </div>
               </div>
         </div>
     </div>
+    <script src="js/productos.js"></script>
 </body>
 </html>
