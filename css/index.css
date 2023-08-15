@@ -13,3 +13,6 @@
 .clr-font-1{
     color: var(--clr-font-100);
 }
+.contenidoRenderizable{
+    display: none;
+}
