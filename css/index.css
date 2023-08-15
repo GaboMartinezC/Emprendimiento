@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-body, a{
-    color: black;
-    font-family: 'Inter', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+:root{
+    --font-1:'Poppins', sans-serif;
+    --clr-font-100: #8ba6ad;
 }
-.colorCorporativo{
-    background-color: #8ba6ac;
+.font-custom-1{
+    font-family: var(--font-1);
+    font-size: 1.35rem;
 }
-.bg-submenu{
-    background-color: #bdcdd8;
+.active{
+    background-color:  var(--clr-font-100) !important;
 }
-a{
-    color:white;
-    text-decoration: none;
+.clr-font-1{
+    color: var(--clr-font-100);
 }
-footer{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.home::after{
+    content: '';
+    position: absolute;
+    background-color: #8ba6ad;
+    width: 100px;
 }

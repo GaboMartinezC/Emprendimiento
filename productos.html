@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/switchModos.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
     <div class="container-fluid m-0 p-0">
@@ -20,7 +21,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto px-2">
                   <li class="nav-item my-2 font-custom-1">
-                    <a href="index.html" class="nav-link active text-dark d-flex align-items-center justify-content-start" aria-current="page">
+                    <a href="index.html" class="nav-link  text-dark d-flex align-items-center justify-content-start" aria-current="page">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
                           </svg>
@@ -28,7 +29,7 @@
                     </a>
                   </li>
                   <li class="nav-item my-2 font-custom-1">
-                    <a href="productos.html" class="nav-link text-dark d-flex align-items-center justify-content-start">
+                    <a href="productos.html" class="nav-link active text-dark d-flex align-items-center justify-content-start">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
                             <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                         </svg>
@@ -82,13 +83,54 @@
                 </ul>
                 <hr>
               </div>
-              <div class="home overflow-hidden col-9  m-0 p-0 text-center d-flex align-items-center justify-content-center">
-                <div class="row d-flex align-items-center justify-content-center ">
-                  <h1 class="display-4 w-50 font-custom-1">Bienvenido a Alquimia Libreria!</h1>
-                  <h3 class="fw-normal text-muted mb-3">Slogan placeholder</h3>
+              <!-- MAIN -->
+              <div class="col-9  text-center py-5">
+                <h1 class="font-custom-1 h1">Apartado de Productos</h1>
+                <div class="row py-5">
+                    <div class="col-6 d-flex align-items-center justify-content-center flex-column">
+                        <h1 class="font-custom-1 h2">Agrega un producto</h1>
+                        <div class="form-floating my-4 w-50 ">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label class="font-custom-1 fs-5 " for="floatingInput">Nombre del producto</label>
+                            <select class="form-select mt-3 font-custom-1" aria-label="Autores">
+                                <option class="fs-5" selected> Selecciona un autor</option>
+                            </select>
+                            <select class="form-select mt-3 font-custom-1" aria-label="Idiomas">
+                                <option class="fs-5" selected> Selecciona un idioma</option>
+                            </select>
+                            <div class="form-check form-check-inline py-2">
+                                <div class="d-flex align-items-center justify-content-center visually-hidden">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label mx-2 pt-2 font-custom-1 fs-5" for="inlineCheckbox1">Opcion</label>
+                                </div>
+                            </div>
+                            <button class="btn active border-0 my-3 px-4 py-2 w-100"> <span class="font-custom-1 fs-5">Agregar</span> </button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h1 class="font-custom-1 h2">Estos son nuestros productos</h1>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="fs-5 font-custom-1">#</th>
+                                <th scope="col" class="fs-5 font-custom-1">Nombre</th>
+                                <th scope="col" class="fs-5 font-custom-1">Idioma</th>
+                                <th scope="col" class="fs-5 font-custom-1">Autor</th>
+                                <th scope="col" class="fs-5 font-custom-1">Generos</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>nombre</td>
+                                <td>idioma</td>
+                                <td>autor</td>
+                                <td>genero, genero</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
                 </div>
-                <div class="product-device shadow-sm d-none d-md-block"></div>
-                <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
               </div>
         </div>
     </div>
