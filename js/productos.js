@@ -1,9 +1,5 @@
-/*
-    Método para llenar el localStorage
-    Dylan V.
-*/
 function Inicializacion(){
-    const data = {
+    const dataProductos  = {
         autores: [
             {id: 1, name:"Dylan"},
             {id: 2, name:"Gabo"},
@@ -25,8 +21,8 @@ function Inicializacion(){
         productos: []
     };
 
-    if(!(localStorage.getItem("data")))
-        localStorage.setItem("data", JSON.stringify(data));
+    if(!(localStorage.getItem("dataProductos")))
+        localStorage.setItem("dataProductos", JSON.stringify(dataProductos));
 
     LlenarAutores();
     LlenarIdiomas();
@@ -35,33 +31,27 @@ function Inicializacion(){
 }
 
 function LlenarAutores(){
-    /*
-        Se obtiene los datos del localStorage
-        además del dropdown de los autores,
-        después se parsea a JSON para ser trabajados,
-        por último se añaden al HTML las opciones
-    */
-    const data = localStorage.getItem("data");
+    const dataProductos = localStorage.getItem("dataProductos");
     const autores = document.getElementById('autores')
-    let objetos = JSON.parse(data);
+    let objetos = JSON.parse(dataProductos);
     objetos.autores.forEach(autor => {
         autores.insertAdjacentHTML('beforeend','<option class="fs-5" value="'+ autor.id+'">'+autor.name+'</option>')
     });
 }
 
 function LlenarIdiomas(){
-    const data = localStorage.getItem("data");
+    const dataProductos = localStorage.getItem("dataProductos");
     const idiomas = document.getElementById('idiomas')
-    let objetos = JSON.parse(data);
+    let objetos = JSON.parse(dataProductos);
     objetos.idiomas.forEach(idioma => {
         idiomas.insertAdjacentHTML('beforeend','<option class="fs-5" value="'+ idioma.id+'">'+idioma.name+'</option>')
     });
 }
 
 function LlenarGeneros(){
-    const data = localStorage.getItem("data");
+    const dataProductos = localStorage.getItem("dataProductos");
     const generos = document.getElementById('generos')
-    let objectos = JSON.parse(data);
+    let objectos = JSON.parse(dataProductos);
     objectos.generos.forEach(genero => {
         generos.insertAdjacentHTML('beforeend',
         '<div class="d-flex align-items-center justify-content-center">' +
@@ -71,9 +61,9 @@ function LlenarGeneros(){
 }
 
 function LlenarProductos(){
-    const data = localStorage.getItem("data");
+    const dataProductos = localStorage.getItem("dataProductos");
     const productos = document.getElementById('productos')
-    let objectos = JSON.parse(data);
+    let objectos = JSON.parse(dataProductos);
     objectos.productos.forEach(producto => {
         let idiomaPr,autorPr;
         let generosPr = [];
@@ -95,8 +85,8 @@ function LlenarProductos(){
 
 const agregarBtn = document.getElementById('btnAgregar')
 agregarBtn.addEventListener('click',()=>{
-    const data = localStorage.getItem("data");
-    let objectos = JSON.parse(data);
+    const dataProductos = localStorage.getItem("dataProductos");
+    let objectos = JSON.parse(dataProductos);
     const nombreInput = document.getElementById('nombre');
     const autoresInput = document.getElementById('autores');
     const idiomasInput = document.getElementById('idiomas');
@@ -113,12 +103,11 @@ agregarBtn.addEventListener('click',()=>{
     });
     const datos = JSON.stringify(objectos);
     window.location.reload();
-    localStorage.setItem("data",datos);
+    localStorage.setItem("dataProductos",datos);
 });
 
 const limpiador = document.getElementById('limpiarTabla');
 limpiador.addEventListener('click', ()=>{
-    localStorage.clear()
-    Inicializacion();
+    localStorage.removeItem("productos");
     window.location.reload();
 })
