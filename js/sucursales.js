@@ -1,3 +1,6 @@
+function Inicializacion(){
+    LlenarSucursales();
+}
 function LlenarSucursales(){
     const dataInventario = localStorage.getItem("dataInventario");
     const sucursales = document.getElementById('sucursales')
@@ -5,8 +8,8 @@ function LlenarSucursales(){
     objectos.sucursales.forEach(sucursal => {
         sucursales.insertAdjacentHTML('beforeend',
         '<th scope="row">'+sucursal.id+'</th>' +
-        '<td>'+sucursal.name+'</td>'+
-        '<td>' +sucursal.ubicacion+'</td>')
+        '<td>'+sucursal.name+'</td>' +
+        '<td>'+sucursal.ubicacion+'</td>')
     });
 }
 const agregarBtn = document.getElementById('btnAgregar')
@@ -16,7 +19,7 @@ agregarBtn.addEventListener('click',()=>{
     const dataInventario = localStorage.getItem("dataInventario");
     let objectos = JSON.parse(dataInventario);
     objectos.sucursales.push({
-        id:( sucursales.productos.length + 1),name:inputNombre.value,ubicacion:inputUbicacion
+        id:( objectos.sucursales.length+1),name:inputNombre.value,ubicacion:inputUbicacion.value
     });
     const datos = JSON.stringify(objectos);
     window.location.reload();
@@ -24,7 +27,6 @@ agregarBtn.addEventListener('click',()=>{
 });
 const limpiador = document.getElementById('limpiarTabla');
 limpiador.addEventListener('click', ()=>{
-    localStorage.removeItem("sucursales");
-    Inicializacion();
+    localStorage.removeItem("dataInventario");
     window.location.reload();
 })

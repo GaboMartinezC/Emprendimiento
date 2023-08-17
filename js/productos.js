@@ -91,15 +91,15 @@ agregarBtn.addEventListener('click',()=>{
     const autoresInput = document.getElementById('autores');
     const idiomasInput = document.getElementById('idiomas');
     let checkboxes= document.querySelectorAll('input[name="genero"]:checked');
-    let output= [];
+    let output;
     checkboxes.forEach((checkbox) => {
-        output.push(checkbox.value);
+        output += ", " + checkbox.value 
     });
     objectos.productos.push({
         id:( objectos.productos.length + 1),name:nombreInput.value,
         autor:autoresInput.options[autoresInput.selectedIndex].value,
         idioma: idiomasInput.options[idiomasInput.selectedIndex].value,
-        generos: 1
+        generos: output
     });
     const datos = JSON.stringify(objectos);
     window.location.reload();
@@ -108,6 +108,7 @@ agregarBtn.addEventListener('click',()=>{
 
 const limpiador = document.getElementById('limpiarTabla');
 limpiador.addEventListener('click', ()=>{
-    localStorage.removeItem("productos");
+    localStorage.removeItem("dataProductos");
+    Inicializacion();
     window.location.reload();
 })
