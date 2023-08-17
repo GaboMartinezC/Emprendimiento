@@ -20,9 +20,9 @@ function Inicializacion(){
 
     if(!(localStorage.getItem("dataInventario")))
         localStorage.setItem("dataInventario", JSON.stringify(dataInventario));
-
-    LlenarSucursales()
+    LlenarSucursales();
     LlenarInventarios();
+    InicializarVistaEntradas();
 }
 function LlenarSucursales(){
     const dataInventario = localStorage.getItem("dataInventario");
