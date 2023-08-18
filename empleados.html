@@ -43,7 +43,7 @@
                     </a>
                   </li>
                   <li class="nav-item my-2 font-custom-1">
-                    <a href="#" class="nav-link text-dark">
+                    <a href="proveedores.html" class="nav-link text-dark">
                         
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
                             <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -81,27 +81,31 @@
                 <hr>
               </div>
               <div class="col-8 text-center py-5" >
-                <h1 class="font-custom-1 h1">Apartado de Proveedores</h1>
+                <h1 class="font-custom-1 h1">Apartado de Empleados</h1>
                 <div class="row py-5">
                     <!-- Entradas de datos -->
                     <div class="col-6 d-flex align-items-center justify-content-center flex-column">
-                        <h1 class="font-custom-1 h2">Agrega un proveedor</h1>
+                        <h1 class="font-custom-1 h2">Agrega un empleado</h1>
                         <div class="form-floating my-4 w-50">
                             <div class="form-floating my-4 w-100">
                               <input type="text" class="form-control" placeholder="a" id="nombre">
                               <label for="nombre" class="font-custom-1 fs-5">Ingrese el nombre</label>
                             </div>
                             <div class="form-floating my-4 w-100">
-                              <input type="text" class="form-control" placeholder="b" id="email">
-                              <label for="email" class="font-custom-1 fs-5">Ingrese la email</label>
+                              <input type="text" class="form-control" placeholder="b" id="cedula">
+                              <label for="cedula" class="font-custom-1 fs-5">Ingrese la cedula</label>
                             </div>
                             <div class="form-floating my-4 w-100">
                                 <input type="text" class="form-control" placeholder="b" id="telefono">
-                                <label for="telefono" class="font-custom-1 fs-5">Ingrese el teléfono</label>
+                                <label for="telefono" class="font-custom-1 fs-5">Ingrese el telefono</label>
                             </div>
                             <div class="form-floating my-4 w-100">
-                                <input type="checkbox"  id="esEditorial" name="esEditorial" value="valorOpcional">
-                                <label for="esEditorial">Es editorial</label>
+                                <input type="text" class="form-control" placeholder="b" id="email">
+                                <label for="email" class="font-custom-1 fs-5">Ingrese el email</label>
+                            </div>
+                            <div class="form-floating my-4 w-100">
+                                <input type="text" class="form-control" placeholder="b" id="puesto">
+                                <label for="puesto" class="font-custom-1 fs-5">Ingrese el puesto</label>
                             </div>
                             <button id="btnAgregar" class="btn active border-0 my-3 px-4 py-2 w-100 d-flex align-items-center justify-content-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
@@ -113,18 +117,19 @@
                     </div>
                     <!-- Tabla -->
                     <div class="col-6">
-                        <h1 class="font-custom-1 h2">Estos son nuestros proveedores</h1>
+                        <h1 class="font-custom-1 h2">Estas son nuestros empleados</h1>
                         <table class="table">
                         <thead>
                         <tr>
                             <th scope="col" class="fs-5 font-custom-1">#</th>
                             <th scope="col" class="fs-5 font-custom-1">Nombre</th>
-                            <th scope="col" class="fs-5 font-custom-1">Email</th>
+                            <th scope="col" class="fs-5 font-custom-1">Cedula</th>
                             <th scope="col" class="fs-5 font-custom-1">Telefono</th>
-                            <th scope="col" class="fs-5 font-custom-1">Es editorial?</th>
+                            <th scope="col" class="fs-5 font-custom-1">Email</th>
+                            <th scope="col" class="fs-5 font-custom-1">Puesto</th>
                         </tr>
                         </thead>
-                        <tbody id="proveedores">
+                        <tbody id="empleados">
                         </tbody>
                         </table>
                         <button id="limpiarTabla" class="m-auto btn active border-0 d-flex align-items-center justify-content-center">
@@ -139,7 +144,7 @@
               <!-- <script src="js/renderizarContenidos.js"></script> -->
         </div>
     </div>
-    <script src="js/proveeedores.js"></script>
+    <script src="js/empleados.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
