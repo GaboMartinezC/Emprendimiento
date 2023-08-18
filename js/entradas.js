@@ -44,7 +44,6 @@ const GenerarTabla = () => {
     dataProdJSON.entradas.forEach(entradas => {
         let descripSucursal, descripProducto;
         dataInventarioJSON.sucursales.forEach(sucursal => {
-            console.log(entradas.sucursal+' == '+sucursal.id)
             if (entradas.sucursal == sucursal.id)
                 descripSucursal = sucursal.name;
                 
@@ -54,11 +53,10 @@ const GenerarTabla = () => {
                 descripProducto = producto.name;
         });
         
-        let fila = `<th scope="row">${entradas.id}</th>
+        let fila = `
         <td>${descripProducto}</td>
         <td>${descripSucursal}</td>
         <td>${entradas.cantidad}</td>`;
-        console.log(fila);
         tabla.insertAdjacentHTML('beforeend', fila);
     });
 }
