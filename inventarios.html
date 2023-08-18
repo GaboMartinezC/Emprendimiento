@@ -82,7 +82,7 @@
                 <hr>
               </div>
               <!--Inventarios-->
-              <div class="col-8  text-center py-5" id="inventario" style="display: none;">
+              <div class="col-8  text-center py-5" id="inventario">
                 <h1 class="font-custom-1 h1">Apartado de Inventarios</h1>
                 <div class="row py-5">
                     <div class="col-6 d-flex align-items-center justify-content-center flex-column">
@@ -120,10 +120,15 @@
                             </button>
                           </table>
                     </div>
+                  <div class="col-offset-6">
+                    <button onclick="MostrarOpuesto('inventario','entradas')" class="m-auto btn active border-0 d-flex align-items-center justify-content-center">
+                      <span class="font-custom-1 p-1">Entradas</span> 
+                    </button>
+                  </div>
                 </div>
               </div>
               <!--Entradas de producto-->
-              <div class="col-8  text-center py-5" id="entradas">
+              <div class="col-8  text-center py-5" id="entradas" style="display: none;">
                 <h1 class="font-custom-1 h1">Entradas de Producto</h1>
                 <div class="row py-5">
                   <div class="col-6 d-flex align-items-center justify-content-center flex-column">
@@ -164,6 +169,11 @@
                               <span class="font-custom-1 p-1">Limpiar Tabla</span> 
                           </button>
                         </table>
+                  </div>
+                  <div class="col-offset-6">
+                    <button onclick="MostrarOpuesto('entradas','inventario')" class="m-auto btn active border-0 d-flex align-items-center justify-content-center">
+                      <span class="font-custom-1 p-1">Inventarios</span> 
+                    </button>
                   </div>
               </div>
               <!--Fin entradas-->

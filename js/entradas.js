@@ -14,3 +14,10 @@ const InicializarVistaEntradas = () => {
         productos.insertAdjacentHTML('beforeend', `<option class="fs-5" value="${producto.id}">${producto.name}</option>`)
     });
 }
+const GuardarEntrada = () => {
+
+}
+const MostrarOpuesto = (mod1, mod2) => {
+    document.getElementById(mod1).style.display = "none";
+    document.getElementById(mod2).style.display = "block";
+}
