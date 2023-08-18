@@ -8,7 +8,7 @@ const InicializarVistaEntradas = () => {
     });
     //Inicializa combobox de productos
     const dataProductos = localStorage.getItem('dataProductos');
-    const productos = document.getElementById('productos');
+    const productos = document.getElementById('listadoProductos');
     objetos = JSON.parse(dataProductos);
     objetos.productos.forEach(producto => {
         productos.insertAdjacentHTML('beforeend', `<option class="fs-5" value="${producto.id}">${producto.name}</option>`)
