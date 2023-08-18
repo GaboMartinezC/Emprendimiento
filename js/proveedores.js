@@ -2,7 +2,7 @@ function Inicializacion(){
     LlenarProveedores();
 }
 function LlenarProveedores(){
-    const dataInventario = localStorage.getItem("dataInventario");
+    const dataProductos = localStorage.getItem("dataProductos");
     const proveedores = document.getElementById('proveedores')
     let objectos = JSON.parse(dataInventario);
     objectos.proveedores.forEach(proveedor => {

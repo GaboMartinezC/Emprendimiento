@@ -34,7 +34,7 @@
                     </a>
                   </li>
                   <li class="nav-item my-2 font-custom-1">
-                    <a href="datosProducto.html" class="nav-link text-dark  d-flex align-items-center justify-content-start">
+                    <a href="#" class="nav-link text-dark  d-flex align-items-center justify-content-start">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                             <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                             <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
@@ -81,11 +81,11 @@
                 <hr>
               </div>
               <div class="col-8 text-center py-5" >
-                <h1 class="font-custom-1 h1">Apartado de Sucursales</h1>
+                <h1 class="font-custom-1 h1">Apartado de Datos Producto</h1>
                 <div class="row py-5">
                     <!-- Entradas de datos -->
                     <div class="col-6 d-flex align-items-center justify-content-center flex-column">
-                        <h1 class="font-custom-1 h2">Agrega un sucursal</h1>
+                        <h1 class="font-custom-1 h2">Agrega los datos del Producto</h1>
                         <div class="form-floating my-4 w-50">
                             <div class="form-floating my-4 w-100">
                               <input type="text" class="form-control" placeholder="a" id="nombre">
@@ -93,8 +93,20 @@
                             </div>
                             <div class="form-floating my-4 w-100">
                               <input type="text" class="form-control" placeholder="b" id="ubicacion">
-                              <label for="ubicacion" class="font-custom-1 fs-5">Ingrese la ubicacion</label>
+                              <label for="ubicacion" class="font-custom-1 fs-5">Ingrese stock mínimo</label>
                             </div>
+                            <div class="form-floating my-4 w-100">
+                              <input type="text" class="form-control" placeholder="b" id="ubicacion">
+                              <label for="ubicacion" class="font-custom-1 fs-5">Ingrese stock máximo</label>
+                            </div>
+                            <div class="form-floating my-4 w-100">
+                              <input type="text" class="form-control" placeholder="b" id="ubicacion">
+                              <label for="ubicacion" class="font-custom-1 fs-5">Ingrese el precio</label>
+                            </div>
+                            <select id="proveedores" class="form-select mt-3 font-custom-1" aria-label="Proveedores">
+                              <option class="fs-5" selected> Selecciona un proveedor</option>
+                          </select>
+
                             <button id="btnAgregar" class="btn active border-0 my-3 px-4 py-2 w-100 d-flex align-items-center justify-content-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
@@ -111,10 +123,13 @@
                         <tr>
                             <th scope="col" class="fs-5 font-custom-1">#</th>
                             <th scope="col" class="fs-5 font-custom-1">Nombre</th>
-                            <th scope="col" class="fs-5 font-custom-1">Ubicacion</th>
+                            <th scope="col" class="fs-5 font-custom-1">Stock mínimo</th>
+                            <th scope="col" class="fs-5 font-custom-1">Stock máximo</th>
+                            <th scope="col" class="fs-5 font-custom-1">Precio</th>
+                            <th scope="col" class="fs-5 font-custom-1">Proveedor</th>
                         </tr>
                         </thead>
-                        <tbody id="sucursales">
+                        <tbody id="datosProducto">
                         </tbody>
                         </table>
                         <button id="limpiarTabla" class="m-auto btn active border-0 d-flex align-items-center justify-content-center">
@@ -129,7 +144,7 @@
               <!-- <script src="js/renderizarContenidos.js"></script> -->
         </div>
     </div>
-    <script src="js/sucursales.js"></script>
+    <script src="js/datosProducto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
