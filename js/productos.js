@@ -18,9 +18,9 @@ function Inicializacion(){
             {id:3,name:"Comedia"},
             {id:4,name:"Ficcion"}
         ],
-        productos: []
+        productos: [],
+        entradas: []
     };
-
     if(!(localStorage.getItem("dataProductos")))
         localStorage.setItem("dataProductos", JSON.stringify(dataProductos));
 

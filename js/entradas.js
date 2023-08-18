@@ -15,7 +15,24 @@ const InicializarVistaEntradas = () => {
     });
 }
 const GuardarEntrada = () => {
-
+    alert("sirve");
+    const productoSeleccionado = document.getElementById('listadoProductos');
+    const sucursalSeleccionada = document.getElementById('sucursalesVistaEntradas');
+    const cantidadSeleccionada = document.getElementById('cantSeleccionada').value;
+    let productos = localStorage.getItem('dataProductos');
+    if (cantidadSeleccionada > 0)
+    {
+        let productosJSON = JSON.parse(productos)
+        productosJSON.entradas.push({
+            id: entradas.length + 1,
+            producto: productoSeleccionado.options[productoSeleccionado.selectedIndex].value,
+            sucursal: sucursalSeleccionada.options[sucursalSeleccionada.selectedIndex].value,
+            cantidad: cantidadSeleccionada
+        });
+        const datos = JSON.stringify(productosJSON);
+        localStorage.setItem("dataProductos",datos);
+        window.location.reload();
+    }
 }
 const MostrarOpuesto = (mod1, mod2) => {
     document.getElementById(mod1).style.display = "none";
