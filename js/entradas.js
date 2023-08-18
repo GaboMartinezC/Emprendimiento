@@ -13,9 +13,9 @@ const InicializarVistaEntradas = () => {
     objetos.productos.forEach(producto => {
         productos.insertAdjacentHTML('beforeend', `<option class="fs-5" value="${producto.id}">${producto.name}</option>`)
     });
+    GenerarTabla();
 }
 const GuardarEntrada = () => {
-    alert("sirve");
     const productoSeleccionado = document.getElementById('listadoProductos');
     const sucursalSeleccionada = document.getElementById('sucursalesVistaEntradas');
     const cantidadSeleccionada = document.getElementById('cantSeleccionada').value;
@@ -24,7 +24,7 @@ const GuardarEntrada = () => {
     {
         let productosJSON = JSON.parse(productos)
         productosJSON.entradas.push({
-            id: entradas.length + 1,
+            id: (entradas.length + 1),
             producto: productoSeleccionado.options[productoSeleccionado.selectedIndex].value,
             sucursal: sucursalSeleccionada.options[sucursalSeleccionada.selectedIndex].value,
             cantidad: cantidadSeleccionada
@@ -33,6 +33,34 @@ const GuardarEntrada = () => {
         localStorage.setItem("dataProductos",datos);
         window.location.reload();
     }
+}
+const GenerarTabla = () => {
+    const dataProductos = localStorage.getItem("dataProductos");
+    const dataInventario = localStorage.getItem("dataInventario");
+    const tabla = document.getElementById('listadoEntradas');
+    let dataProdJSON = JSON.parse(dataProductos);
+    let dataInventarioJSON = JSON.parse(dataInventario);
+    dataProdJSON.entradas.forEach(entradas => {
+        let descripSucursal, descripProducto;
+        dataInventarioJSON.sucursales.forEach(sucursal => {
+            if (entradas.sucursal === sucursal.id)
+                descripSucursal = sucursal.name;
+        });
+        dataProdJSON.productos.forEach(producto => {
+            if (entradas.producto === producto.id)
+                descripProducto = producto.name;
+        });
+        tabla.insertAdjacentHTML('beforeend',
+        `<th scope="row">${entradas.id}</th>
+        <td>${descripProducto}</td>
+        <td>${descripSucursal}</td>
+        <td>${entradas.cantidad}</td>`);
+    });
+}
+const EliminarRegistro = () => {
+    localStorage.removeItem("dataProductos");
+    Inicializacion();
+    window.location.reload();
 }
 const MostrarOpuesto = (mod1, mod2) => {
     document.getElementById(mod1).style.display = "none";
