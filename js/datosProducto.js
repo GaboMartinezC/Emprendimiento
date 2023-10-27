@@ -32,14 +32,14 @@ function LlenarDatosProducto(){
     const dataInventario = localStorage.getItem("dataInventario");
     const datosProducto = document.getElementById('datosProducto')
     let objectos = JSON.parse(dataInventario);
-    objectos.datosProducto.forEach(datosProductos => {
+    objectos.datosProducto.forEach(dP => {
         datosProducto.insertAdjacentHTML('beforeend',
-        '<th scope="row">'+datosProducto.id+'</th>' +
-        '<td>'+datosProducto.name+'</td>' +
-        '<td>'+datosProducto.stockMinimo+'</td>' +
-        '<td>'+datosProducto.stockMaximo+'</td>' +
-        '<td>'+datosProducto.precio+'</td>' +
-        '<td>'+datosProducto.proveedor+'</td>'
+        '<th scope="row">'+dP.id+'</th>' +
+        '<td>'+dP.name+'</td>' +
+        '<td>'+dP.stockMinimo+'</td>' +
+        '<td>'+dP.stockMaximo+'</td>' +
+        '<td>'+dP.precio+'</td>' +
+        '<td>'+dP.proveedor+'</td>'
         )
     });
 }
