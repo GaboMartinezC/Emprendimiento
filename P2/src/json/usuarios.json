@@ -1,4 +1,7 @@
 {
     "nombre": "gabo",
-    "contrasenna": "123"
+    "apellido": "martinez",
+    "email": "martinezcgabriel42@gmail.com",
+    "pass": "123",
+    "admin" : true
 }
