@@ -8,18 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar sticky-top">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarComprimida" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarComprimida">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <div class="nav-item dropdown m-5">
+            <div class="nav-item dropdown m-2">
                 <a id="dropdownNombreUsuario" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Usuario</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Ajustes</a></li>
-                  <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                  <li onclick="CerrarSesion();"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
                 </ul>
             </div>
           </div>
@@ -32,19 +32,19 @@
             <img src="assets/img/logo.png" height="100">
           </span>
           <ul class="listaOpciones">
-            <li class="mt-5">
+            <li class="mt-5" onclick="CambioVentana('opcionProductos');">
               <h3 class="opcionMenuLat">
                 Productos
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H64c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24V448c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V280h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448V176h40c13.3 0 24-10.7 24-24s-10.7-24-24-24H448c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H280V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H176V24zM160 128H352c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160V352H352V160z"/></svg>
               </h3>
             </li>
-            <li class="mt-5">
+            <li class="mt-5" onclick="CambioVentana('opcionUsuarios');">
               <h3 class="opcionMenuLat">
                 Usuarios
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z"/></svg>
               </h3>
             </li>
-            <li class="mt-5">
+            <li class="mt-5" onclick="CambioVentana('opcionVentas');">
               <h3 class="opcionMenuLat">
                 Ventas
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M272.2 64.6l-51.1 51.1c-15.3 4.2-29.5 11.9-41.5 22.5L153 161.9C142.8 171 129.5 176 115.8 176H96V304c20.4 .6 39.8 8.9 54.3 23.4l35.6 35.6 7 7 0 0L219.9 397c6.2 6.2 16.4 6.2 22.6 0c1.7-1.7 3-3.7 3.7-5.8c2.8-7.7 9.3-13.5 17.3-15.3s16.4 .6 22.2 6.5L296.5 393c11.6 11.6 30.4 11.6 41.9 0c5.4-5.4 8.3-12.3 8.6-19.4c.4-8.8 5.6-16.6 13.6-20.4s17.3-3 24.4 2.1c9.4 6.7 22.5 5.8 30.9-2.6c9.4-9.4 9.4-24.6 0-33.9L340.1 243l-35.8 33c-27.3 25.2-69.2 25.6-97 .9c-31.7-28.2-32.4-77.4-1.6-106.5l70.1-66.2C303.2 78.4 339.4 64 377.1 64c36.1 0 71 13.3 97.9 37.2L505.1 128H544h40 40c8.8 0 16 7.2 16 16V352c0 17.7-14.3 32-32 32H576c-11.8 0-22.2-6.4-27.7-16H463.4c-3.4 6.7-7.9 13.1-13.5 18.7c-17.1 17.1-40.8 23.8-63 20.1c-3.6 7.3-8.5 14.1-14.6 20.2c-27.3 27.3-70 30-100.4 8.1c-25.1 20.8-62.5 19.5-86-4.1L159 404l-7-7-35.6-35.6c-5.5-5.5-12.7-8.7-20.4-9.3C96 369.7 81.6 384 64 384H32c-17.7 0-32-14.3-32-32V144c0-8.8 7.2-16 16-16H56 96h19.8c2 0 3.9-.7 5.3-2l26.5-23.6C175.5 77.7 211.4 64 248.7 64H259c4.4 0 8.9 .2 13.2 .6zM544 320V176H496c-5.9 0-11.6-2.2-15.9-6.1l-36.9-32.8c-18.2-16.2-41.7-25.1-66.1-25.1c-25.4 0-49.8 9.7-68.3 27.1l-70.1 66.2c-10.3 9.8-10.1 26.3 .5 35.7c9.3 8.3 23.4 8.1 32.5-.3l71.9-66.4c9.7-9 24.9-8.4 33.9 1.4s8.4 24.9-1.4 33.9l-.8 .8 74.4 74.4c10 10 16.5 22.3 19.4 35.1H544zM64 336a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm528 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/></svg>
@@ -56,16 +56,16 @@
         <div class="col-12 col-md-9">
           <hr>
           <!--Productos-->
-          <div class="row" id="opcionProductos" style="display: none;">
+          <div class="row" id="opcionProductos">
             <div class="col-12 col-md-5">
               <!--Formulario-->
               <div class="form-control row m-1">
                 <h3 class="text-center" id="txtAccion">Ingresar Producto</h3>
-                <input type="text" class="form-control mt-5" placeholder="Descripcion">
-                <input type="text" class="form-control mt-5" placeholder="Descripcion Larga">
-                <input type="number" class="form-control mt-5" placeholder="Precio ($)">
-                <input type="text" class="form-control mt-5" placeholder="URL Imagen">
-                <button class="col-4 btn btn-outline-dark mt-5 offset-2">
+                <input type="text" class="form-control mt-5" placeholder="Descripcion" id="txtDescripcion">
+                <input type="text" class="form-control mt-5" placeholder="Descripcion Larga" id="txtDescripcionLarga">
+                <input type="number" class="form-control mt-5" placeholder="Precio ($)" id="txtPrecio">
+                <input type="text" class="form-control mt-5" placeholder="URL Imagen" id="txtUrlImagen">
+                <button class="col-4 btn btn-outline-dark mt-5 offset-2" id="btnIngresarProducto" onclick="IngresarProducto();">
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                   </span>
@@ -83,18 +83,18 @@
                 <h3 class="col-12 text-center">
                     Listado
                 </h3>
-                <div class="col-12 col-md-6" id="listadoProductos">
+                <div class="row" id="listadoProductos">
                   
                 </div>
               </div>
             </div>
           </div>
           <!--Usuarios-->
-          <div class="row" id="opcionUsuarios">
+          <div class="row" id="opcionUsuarios" style="display: none;">
             <div class="col-12 col-md-5">
               <!--Formulario-->
               <div class="form-control row m-1">
-                <h3 class="text-center" id="txtAccion">Ingresar Producto</h3>
+                <h3 class="text-center" id="txtAccion">Ingresar Usuario</h3>
                 <input type="text" class="form-control mt-5" placeholder="Nombre">
                 <input type="text" class="form-control mt-5" placeholder="Apellido(s)">
                 <input type="text" class="form-control mt-5" placeholder="Email">
@@ -121,7 +121,7 @@
                     Listado
                 </h3>
                 <div class="col-12 col-md-6" id="listadoUsuarios">
-                  
+
                 </div>
               </div>
             </div>
@@ -134,5 +134,8 @@
         </div>
     </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="src/index.js"></script>
+  <script src="src/sesion.js"></script>
 </html>
