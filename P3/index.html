@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shiba Gaming Store</title>
+    <link rel="icon" href="assets/img/logo.png">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <!--Barra Superior-->
+    <nav class="navbar sticky-top" style="background-color: rgb(23, 23, 194);">
+        <div class="container-fluid">
+          <span class="p-3">
+            <h3>Shiba Gaming Store</h3>
+          </span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarComprimida" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarComprimida">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item p-1">
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalLogin">Ingresar</button>
+              </li>
+              <li class="nav-item p-1">
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalRegistro">Registrarse</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Cuerpo-->
+      <div class="row pt-5">
+            <!--Jumbotron-->
+            <div class="col-12 offset-md-1 col-md-10">
+                <div class="jumbotron">
+                    <h1 class="display-4">
+                      Shiba Gaming Store
+                      <img src="assets/img/logo.png" height="100">
+                    </h1>
+                    <p class="lead">Una empresa dedicada a la venta de productos informáticos por encargo, <br> accesibles a la comunidad gamer de Costa Rica</p>
+                    <hr class="my-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta quas dolorum magnam aperiam quasi sint, br voluptas quisquam id inventore cum necessitatibus voluptatum, accusamus in sit doloribus laborum voluptatibus dolore!</p>
+                <div class="p-5 text-center">
+                    <div id="carrusel" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="https://img.freepik.com/fotos-premium/tarjeta-grafica-juegos-computadora-mano-pc-segundo-plano-concepto-juegos-pc_176814-1714.jpg" height="400" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://repararelpc.es/wp-content/uploads/2020/10/procesadores.jpg" height="400" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://www.hd-tecnologia.com/imagenes/articulos/2021/11/G.Skill-muestra-un-kit-de-memorias-ram-DDR5-a-7000MTs.jpg" height="400" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!--Footer-->
+      <footer class="p-2 sticky-bottom text-center" style="background-color: rgb(23, 23, 194);">
+        <span style="color: white;">&copy; Shiba Gaming Store</span>
+      </footer>
+      <!--Modales-->
+      <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Login</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-12">
+                    <form action="" class="form-control p-1">
+                        <input class="form-control m-1" type="text" placeholder="Email" id="txtEmailLogin">
+                        <input class="form-control m-1" type="password" placeholder="Contraseña" id="txtPassLogin">
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a type="button" class="btn btn-primary" href="admin.html">Ingresar</a>
+            </div>
+            </div>
+        </div>
+      </div>
+      <!--Registro-->
+      <div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Registro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-12">
+                    <form action="" class="form-control p-1">
+                        <input class="form-control m-1" type="text" placeholder="Nombre">
+                        <input class="form-control m-1" type="text" placeholder="Apellido">
+                        <input class="form-control m-1" type="text" placeholder="Email">
+                        <input class="form-control m-1" type="password" placeholder="Contraseña">
+                        <input class="form-control m-1" type="password" placeholder="Confirmar Contraseña">
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConfirmado">Ingresar</button>
+            </div>
+            </div>
+        </div>
+      </div>
+      <!--Confirmación de Registro-->
+      <div class="modal fade" id="modalConfirmado" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Registro Exitoso, proceda a ingresar al Sistema</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">Ingresar</button>
+            </div>
+            </div>
+        </div>
+      </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="src/sesion.js"></script>
+</html>

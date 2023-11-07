@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AplicacionNetRazor.Models.Matricula>
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Estudiante</th>
+            <th>Usuario</th>
+            <th>Fecha de Creacion</th>
+            <th>Estado</th>
+            <th>Costo</th>
+            <th>     </th>
+        </tr>
+        @foreach (var matr in Model)
+        {
+            <tr>
+                <td>@matr.Id</td>
+                <td>@matr.Estudiante.Nombre</td>
+                <td>@matr.Usuario.Nombre</td>
+                <td>@matr.FechaCreacion</td>
+                <td>@matr.Estado</td>
+                <td>@matr.Costo</td>
+                <td><a asp-controller="Matricula" asp-action="Detalle" asp-route-id="@matr.Id" class="btn btn-primary">Ver Detalle</a></td>
+            </tr>
+        }
+
+    </table>
+</div>
