@@ -17,7 +17,9 @@
           <div class="collapse navbar-collapse" id="navbarComprimida">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             <div class="nav-item dropdown m-2">
-                <a id="dropdownNombreUsuario" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Usuario</a>
+                <a id="dropdownNombreUsuario" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+
+                </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Ajustes</a></li>
                   <li onclick="window.location.replace('index.html')"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
@@ -71,7 +73,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                   </span>
                 </button>
-                <button class="col-4 btn btn-outline-dark mt-5">
+                <button class="col-4 btn btn-outline-dark mt-5 btnLimpiar">
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                   </span>
@@ -96,19 +98,19 @@
               <!--Formulario-->
               <div class="form-control row m-1">
                 <h3 class="text-center" id="txtAccion">Ingresar Usuario</h3>
-                <input type="text" class="form-control mt-5" placeholder="Nombre">
-                <input type="text" class="form-control mt-5" placeholder="Apellido(s)">
-                <input type="text" class="form-control mt-5" placeholder="Email">
-                <input type="password" class="form-control mt-5" placeholder="Contraseña">
-                <input type="password" class="form-control mt-5" placeholder="Confirmar Contraseña">
-                <label for="" class="mt-5 text-center">Admin: <input type="checkbox"></label>
+                <input type="text" class="form-control mt-5" placeholder="Nombre" id="txtNombre">
+                <input type="text" class="form-control mt-5" placeholder="Apellido(s)" id="txtApellido">
+                <input type="text" class="form-control mt-5" placeholder="Email" id="txtEmail">
+                <input type="password" class="form-control mt-5" placeholder="Contraseña" id="txtContra">
+                <input type="password" class="form-control mt-5" placeholder="Confirmar Contraseña" id="txtConfirmarContra">
+                <label for="" class="mt-5 text-center">Admin: <input type="checkbox" id="chkAdmin"></label>
                 
                 <button class="col-4 btn btn-outline-dark mt-5 offset-2">
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                   </span>
                 </button>
-                <button class="col-4 btn btn-outline-dark mt-5">
+                <button class="col-4 btn btn-outline-dark mt-5 btnLimpiar">
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                   </span>
@@ -133,6 +135,6 @@
   </body>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="src/index.js"></script>
-  <script src="src/sesion.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="src/admin.js"></script>
 </html>
