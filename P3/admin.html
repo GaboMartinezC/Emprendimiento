@@ -21,8 +21,7 @@
 
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Ajustes</a></li>
-                  <li onclick="window.location.replace('index.html')"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                  <li id="btnCerrarSesion"><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
                 </ul>
             </div>
           </div>
@@ -86,8 +85,21 @@
                 <h3 class="col-12 text-center">
                     Listado
                 </h3>
-                <div class="row" id="listadoProductos">
-                  
+                <div class="row">
+                  <table class="table table-responsive table-striped">
+                    <th>
+                      <tr>
+                        <td>ID</td>
+                        <td>Descripcion</td>
+                        <td>Descripcion Larga</td>
+                        <td>Precio (EUR)</td>
+                        <td>URL</td>
+                      </tr>
+                    </th>
+                    <tbody id="listadoProductos">
+                      
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -123,8 +135,20 @@
                 <h3 class="col-12 text-center">
                     Listado
                 </h3>
-                <div class="col-12 col-md-6" id="listadoUsuarios">
-
+                <div class="col-12 col-md-6">
+                  <table class="table table-responsive table-striped">
+                    <th>
+                      <tr>
+                        <td>ID</td>
+                        <td>Nombre</td>
+                        <td>Apellidos</td>
+                        <td>Email</td>
+                      </tr>
+                    </th>
+                    <tbody id="listadoUsuarios">
+                      
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

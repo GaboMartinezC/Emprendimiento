@@ -3,15 +3,15 @@ let usuarios;
 let productos;
 let activo = "opcionProductos";
 $(document).ready(function () {
-    ConfigurarLocalStorage();
-    
+    ConfigurarLocalStorage();    
+    RenderizarProductos();
+    RenderizarUsuarios();
     $('#btnIngresarProducto').click(GuardarProducto);
-    //$('#btnIngresarUsuario').click(GuardarUsuario);
-
+    $('#btnIngresarUsuario').click(GuardarUsuario);
     $('.btnLimpiar').click(function() {
         $('input').val('');
     })
-    
+    $('#btnCerrarSesion').click(CerrarSesion)
 });
 //Metodos de Producto
 //Guardar producto
@@ -19,7 +19,7 @@ const GuardarProducto = () => {
     //Declaración de objeto producto
     let bandera = true;
     let producto = {
-        id: productos.length + 1,
+        id: productos[productos.length - 1].id + 1,
         descripcion: $('#txtDescripcion').val(),
         descripcionLarga: $('#txtDescripcionLarga').val(),
         precio: $('#txtDescripcionLarga').val(),
@@ -45,15 +45,20 @@ const GuardarProducto = () => {
         swal("Ha ocurrido un problema", "Datos Incorrectos", "success");
     window.location.reload();
 }
-const EliminarProducto = (id) => {
-    for (let i = 0; i < 10; i++)
+const RenderizarProductos = () => {
+    let html = ``; 
+    for (let i = 0; i < productos.length; i++)
     {
-        if (productos[i].id === id)
-        {
-            console.log(productos[i]);
-        }
+        html += `
+        <tr>
+            <td>${productos[i].id}</td>
+            <td>${productos[i].descripcion}</td>
+            <td>${productos[i].descripcionLarga}</td>
+            <td>${productos[i].precio}</td>
+            <td>${productos[i].urlImagen}</td>
+        </tr>`;
     }
-    window.location.reload();
+    $('#listadoProductos').append(html);
 }
 
 //Metodos de Usuario
@@ -61,7 +66,7 @@ const GuardarUsuario = () => {
     let bandera = true;
     let contra = $('#txtConfirmarContra').val(); 
     let usuario = {
-        id: usuarios.length + 1,
+        id: usuarios[usuarios.length - 1].id + 1,
         nombre: $('#txtNombre').val(),
         apellido: $('#txtApellido').val(),
         email: $('#txtEmail').val(),
@@ -83,6 +88,20 @@ const GuardarUsuario = () => {
     {
         swal("Ingreso Incorrecto", "Verifique los datos", "success");
     }
+}
+const RenderizarUsuarios = () => {
+    let html = ``; 
+    for (let i = 0; i < usuarios.length; i++)
+    {
+        html += `
+        <tr>
+            <td>${usuarios[i].id}</td>
+            <td>${usuarios[i].nombre} ${usuarios[i].apellido}</td>
+            <td>${usuarios[i].apellido}</td>
+            <td>${usuarios[i].email}</td>
+        </tr>`;
+    }
+    $('#listadoUsuarios').append(html);
 }
 
 //Metodos de configuracion
@@ -119,15 +138,13 @@ const ConfigurarLocalStorage = ()  => {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
     }
-    //CAMBIAR A NOT
-    if (sessionStorage.getItem('sesion'))
+    if (sessionStorage.getItem('sesion') === 'null')
         window.location.replace('index.html');
     else
     {
-        //usuario = JSON.parse(sessionStorage.getItem('sesion'));
-        $('#dropdownNombreUsuario').html('');
+        usuario = JSON.parse(sessionStorage.getItem('sesion'));
+        $('#dropdownNombreUsuario').html(usuario.nombre);
     }
-
 }
 ///Método de navegación
 const CambioVentana = (nuevaOpcion) =>{
@@ -143,6 +160,6 @@ const CambioVentana = (nuevaOpcion) =>{
     }
 }
 const CerrarSesion = () => {
-    sessionStorage('sesion', 'null');
+    sessionStorage.setItem('sesion', 'null')
     window.location.replace('index.html')
 }
